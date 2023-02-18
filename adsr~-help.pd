@@ -1,0 +1,60 @@
+#N canvas 685 52 679 692 12;
+#X obj 12 154 cnv 15 533 262 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X text 9 8 INLET 0:;
+#X obj 12 36 cnv 15 490 51 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X obj 606 36 cnv 15 135 39 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X text 603 8 OUTLET 0:;
+#X obj 616 46 sig~;
+#X obj 606 123 cnv 15 499 111 empty empty empty 20 12 0 14 -204800
+-66577 0;
+#X text 603 95 OUTLET 2:;
+#X msg 616 139 set foo;
+#X text 677 132 donde foo representa una lista de todos los parámetros
+correctamente formateados para ser enviados de vuelta a la abstracción
+\, en otras palabras \, conectar esta salida a un mensaje y cuando
+la abstracción reciba el mensaje [state(] \, se guardará el estado
+actual de la abstracción (tener en cuenta que el mensaje se vaciará
+antes de escribir en él);
+#X obj 606 322 cnv 15 394 82 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 605 294 ACERCA DE:;
+#X obj 12 597 loadbang;
+#X msg 12 622 0;
+#X obj 12 647 switch~;
+#X obj 22 52 float;
+#X text 9 126 INLET 1:;
+#X msg 22 164 att \$1;
+#X msg 22 191 dec \$1;
+#X msg 22 260 rel \$1;
+#X msg 22 225 sus \$1;
+#X text 76 260 tiempo de relajamiento (ms);
+#X text 76 191 tiempo de decaimiento (ms);
+#X text 76 164 tiempo de ataque (ms);
+#X text 76 218 valor de sostenimiento (0 a 1 \, valores fuera del rango
+se clipean);
+#X text 68 45 amplitud normalizada (-1 a 1 \, valores negativos invierten
+la fase y valores fuera del rango se clipean);
+#X msg 22 287 legato \$1;
+#X msg 22 321 anticlick \$1;
+#X text 76 386 tiempo de relajamiento (ms);
+#X msg 22 386 log \$1;
+#X text 96 287 usar o no legato (distinto de cero y 0 respectivamente)
+;
+#X text 656 46 envolvente;
+#X text 117 314 al encenderse (distinto de cero) se hace una rampa
+de 10 ms a 0 antes de iniciar la siguiente envolvente cuando esté
+desactivado el legato \, así se evita el click producido por el salto
+inmediato a 0;
+#X text 614 331 generador de envolventes adsr \, con modo legato y
+modo logarítmico \; dylan martin;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 19 0 26 0;
+#X connect 20 0 19 0;
+#X connect 26 0 27 0;
+#X connect 27 0 29 0;
