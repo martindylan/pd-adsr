@@ -1,4 +1,4 @@
-#N canvas 913 52 451 692 12;
+#N canvas 676 0 681 676 12;
 #X obj 178 37 inlet;
 #X obj 273 516 *~;
 #X obj 210 187 t b f;
@@ -14,7 +14,7 @@
 #X obj 274 409 f;
 #X msg 274 438 0 \$1;
 #X obj 210 225 spigot;
-#X obj 411 225 spigot;
+#X obj 411 195 spigot;
 #X obj 488 438 spigot;
 #X obj 178 97 t f f, f 11;
 #X obj 274 477 line~;
@@ -36,15 +36,15 @@
 #X obj 259 187 == 0;
 #X obj 292 254 r \$0-anticlick;
 #N canvas 685 52 679 692 help 0;
-#X obj 630 150 cnv 15 506 105 empty empty empty 20 12 0 14 -204800
--66577 0;
+#X obj 630 150 cnv 15 506 105 empty empty empty 20 12 0 14 #c4fcfc
+#404040 0;
 #X msg 640 166 set foo;
-#X obj 38 174 cnv 15 519 247 empty empty empty 20 12 0 14 -203904 -66577
+#X obj 38 174 cnv 15 519 247 empty empty empty 20 12 0 14 #c4c4fc #404040
 0;
-#X obj 38 71 cnv 15 484 63 empty empty empty 20 12 0 14 -203904 -66577
+#X obj 38 71 cnv 15 484 63 empty empty empty 20 12 0 14 #c4c4fc #404040
 0;
 #X text 35 47 INLET 0:;
-#X obj 629 71 cnv 15 135 39 empty empty empty 20 12 0 14 -204800 -66577
+#X obj 629 71 cnv 15 135 39 empty empty empty 20 12 0 14 #c4fcfc #404040
 0;
 #X obj 639 81 sig~;
 #X text 626 47 OUTLET 0:;
@@ -142,30 +142,30 @@ de escribir en él);
 #X text 450 23 acá se manipulan los mensajes de control de la abstracción
 \; se utiliza el objeto [route] para enviar el valor del mensaje a
 su respectivo [send] \, que enviará el valor a donde corresponda;
-#X obj 220 131 s \$0-anticlick;
-#X obj 178 101 s \$0-legato;
 #X obj 12 61 route att dec sus rel legato anticlick log state;
-#X obj 261 101 s \$0-log;
+#X obj 281 101 s \$0-log;
 #X obj 95 101 clip 0 1;
-#X connect 0 0 16 0;
+#X obj 220 131 s \$0-anticlick-r;
+#X obj 178 101 s \$0-legato-r;
+#X connect 0 0 14 0;
 #X connect 1 0 11 0;
-#X connect 2 0 15 0;
-#X connect 5 0 14 0;
-#X connect 5 0 17 0;
+#X connect 2 0 18 0;
+#X connect 5 0 15 0;
 #X connect 5 0 9 0;
+#X connect 5 0 17 0;
 #X connect 6 0 2 0;
 #X connect 6 0 5 0;
 #X connect 11 0 12 0;
-#X connect 16 0 7 0;
-#X connect 16 1 8 0;
-#X connect 16 2 18 0;
-#X connect 16 3 10 0;
-#X connect 16 4 15 0;
-#X connect 16 5 14 0;
-#X connect 16 6 17 0;
-#X connect 16 7 4 0;
-#X connect 16 8 3 0;
-#X connect 18 0 9 0;
+#X connect 14 0 7 0;
+#X connect 14 1 8 0;
+#X connect 14 2 16 0;
+#X connect 14 3 10 0;
+#X connect 14 4 18 0;
+#X connect 14 5 17 0;
+#X connect 14 6 15 0;
+#X connect 14 7 4 0;
+#X connect 14 8 3 0;
+#X connect 16 0 9 0;
 #X restore 462 86 pd route-inlet-messages;
 #X obj 178 67 route float, f 13;
 #X obj 266 97 s \$0-error;
@@ -192,6 +192,7 @@ martin;
 #X obj 178 127 clip -1 1;
 #X obj 540 554 *~;
 #X obj 416 308 t b b;
+#X obj 411 219 t b b;
 #X connect 0 0 41 0;
 #X connect 1 0 58 0;
 #X connect 1 0 63 0;
@@ -210,8 +211,7 @@ martin;
 #X connect 13 0 18 0;
 #X connect 14 0 30 0;
 #X connect 14 0 12 0;
-#X connect 15 0 31 0;
-#X connect 15 0 3 0;
+#X connect 15 0 65 0;
 #X connect 16 0 18 0;
 #X connect 17 0 62 0;
 #X connect 17 1 25 0;
@@ -259,3 +259,6 @@ martin;
 #X connect 63 0 59 0;
 #X connect 64 0 6 0;
 #X connect 64 1 5 0;
+#X connect 65 0 31 0;
+#X connect 65 0 3 0;
+#X connect 65 1 12 0;
