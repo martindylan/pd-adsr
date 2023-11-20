@@ -1,15 +1,15 @@
 #N canvas 685 52 679 692 12;
-#X obj 12 154 cnv 15 533 262 empty empty empty 20 12 0 14 -203904 -66577
+#X obj 12 154 cnv 15 533 265 empty empty empty 20 12 0 14 #c4c4fc #404040
 0;
 #X text 9 8 INLET 0:;
-#X obj 12 36 cnv 15 490 51 empty empty empty 20 12 0 14 -203904 -66577
+#X obj 12 36 cnv 15 490 51 empty empty empty 20 12 0 14 #c4c4fc #404040
 0;
-#X obj 606 36 cnv 15 135 39 empty empty empty 20 12 0 14 -204800 -66577
+#X obj 606 36 cnv 15 135 39 empty empty empty 20 12 0 14 #c4fcfc #404040
 0;
 #X text 603 8 OUTLET 0:;
 #X obj 616 46 sig~;
-#X obj 606 123 cnv 15 499 111 empty empty empty 20 12 0 14 -204800
--66577 0;
+#X obj 606 123 cnv 15 499 111 empty empty empty 20 12 0 14 #c4fcfc
+#404040 0;
 #X text 603 95 OUTLET 2:;
 #X msg 616 139 set foo;
 #X text 677 132 donde foo representa una lista de todos los parámetros
@@ -18,7 +18,7 @@ correctamente formateados para ser enviados de vuelta a la abstracción
 la abstracción reciba el mensaje [state(] \, se guardará el estado
 actual de la abstracción (tener en cuenta que el mensaje se vaciará
 antes de escribir en él);
-#X obj 606 322 cnv 15 394 82 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 606 322 cnv 15 394 82 empty empty empty 20 12 0 14 #c4fcc4 #404040
 0;
 #X text 605 294 ACERCA DE:;
 #X obj 12 597 loadbang;
@@ -39,7 +39,6 @@ se clipean);
 la fase y valores fuera del rango se clipean);
 #X msg 22 287 legato \$1;
 #X msg 22 321 anticlick \$1;
-#X text 76 386 tiempo de relajamiento (ms);
 #X msg 22 386 log \$1;
 #X text 96 287 usar o no legato (distinto de cero y 0 respectivamente)
 ;
@@ -50,6 +49,8 @@ desactivado el legato \, así se evita el click producido por el salto
 inmediato a 0;
 #X text 614 331 generador de envolventes adsr \, con modo legato y
 modo logarítmico \; dylan martin;
+#X text 76 379 determina si el comportamiento es lineal o logarítmico
+(distinto de cero y 0 respectivamente);
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 17 0 18 0;
@@ -57,4 +58,4 @@ modo logarítmico \; dylan martin;
 #X connect 19 0 26 0;
 #X connect 20 0 19 0;
 #X connect 26 0 27 0;
-#X connect 27 0 29 0;
+#X connect 27 0 28 0;
